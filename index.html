@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/011edb2476.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <div id="main-box" class="container">
+        <input
+          type="text"
+          placeholder="Search by Name, Email or Role"
+          class="search-bar"
+          id="search"
+        />
+        <table>
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" name="select-all" id="select-all" />
+              </th>
+              <th>Name</th>
+              <th>Email</th>
+              <th class="hide">Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-rows"></tbody>
+        </table>
+        <div class="pagination">
+          <button class="delete" id="delete-selected">Delete Selected</button>
+          <button id="first" class="hide" onclick="firstPage()">
+            &lt;&lt;
+          </button>
+          <button id="decrement" onclick="decrementPage()">&lt;</button>
+          <div id="pagination-btn"></div>
+          <button id="increment" onclick="incrementPage()">&gt;</button>
+          <button id="last" class="hide" onclick="lastpage()">&gt;&gt;</button>
+        </div>
+      </div>
+      <div id="edit-box" class="editbox">
+        <div class="edit-content">
+          <div class="input-field">
+            <input id="name" type="text" placeholder="Name"/>
+            <input id="email" type="text" placeholder="Email"/>
+            <input id="role" type="text" placeholder="Role"/>
+          </div>
+          <div class="save-close">
+            <button id="save" class="save">Save</button>
+            <button id="close" class="close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
